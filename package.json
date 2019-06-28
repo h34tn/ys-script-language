@@ -1,0 +1,74 @@
+{
+    "name": "ys-script-language",
+    "displayName": "YS Script Language",
+    "description": "",
+    "publisher": "h34tn",
+    "version": "0.0.3",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "capabilities": {
+            "hoverProvider": "true"
+        },
+        "configurationDefaults": {
+            "[ysscript]": {
+                "editor.wordBasedSuggestions": false
+            }
+        },
+        "languages": [
+            {
+                "id": "ysscript",
+                "aliases": [
+                    "YSScript",
+                    "ysscript"
+                ],
+                "extensions": [
+                    ".ys"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ysscript",
+                "scopeName": "source.ys",
+                "path": "./syntaxes/ysscript.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "ysscript",
+                "path": "./snippets/snippets.json"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "Enter",
+                "command": "jumpToNextSnippetPlaceholder",
+                "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^3.3.1",
+        "vscode": "^1.1.28",
+        "tslint": "^5.12.1",
+        "@types/node": "^10.12.21",
+        "@types/mocha": "^2.2.42"
+    }
+}

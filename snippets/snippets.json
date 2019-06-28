@@ -1,0 +1,56 @@
+{
+    "Dialog":
+    {
+        "prefix": "dialog",
+        "scope": "ysscript",
+        "body":
+        [
+            "[Dialog(${1:角色名})(${2|Speak,Think,Narrator|})]${3:对话内容}"
+        ]
+    },
+    "Comment":
+    {
+        "prefix": "comment",
+        "scope": "ysscript",
+        "body":
+        [
+            "[Comment]${1:备注}"
+        ]
+    },
+    "Choice":
+    {
+        "prefix": "choice",
+        "scope": "ysscript",
+        "body":
+        [
+            "[Choice][Dialog(${1:角色名})(${2|Speak,Think,Narrator|})]${3:对话内容}"
+        ]
+    },
+    "Option":
+    {
+        "prefix": "option",
+        "scope": "ysscript",
+        "body":
+        [
+            "[Option]${1:选项内容}[Gems ${2:钻石数}][Goto ${3:标签名}]"
+        ]
+    },    
+    "PlayerName":
+    {
+        "prefix": "playername",
+        "scope": "ysscript",
+        "body":
+        [
+            "{playername}"
+        ]
+    },
+    "Label":
+    {
+        "prefix": "label",
+        "scope": "ysscript",
+        "body":
+        [
+            "[Label ${1:标签名}]\n"
+        ]
+    }      
+}

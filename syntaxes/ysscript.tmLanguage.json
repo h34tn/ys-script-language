@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "YSScript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#variable"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"name": "keyword.square_brackets.ysscript",
+			"begin": "\\[",
+			"end": "\\]",
+			"patterns": [
+				{
+					"name": "keyword.control.ysscript",
+					"match": "\\b([Dd]ialog|[Cc]hoice|[Oo]ption|[Gg]ems|[Gg]oto|[Cc]omment|[Ll]abel)\\b"
+				},
+				{
+					"name": "keyword.parentheses.ysscript",
+					"begin": "\\(",
+					"end": "\\)",
+					"patterns": [
+						{
+							"name": "keyword.control.ysscript",
+							"match": "\\b([Tt]hink|[Ss]peak|[Nn]arrator)\\b"
+						}
+					]			
+				}
+			]
+		},
+		"variable": {
+			"name": "keyword.variable.ysscript",
+			"begin": "\\{",
+			"end": "\\}",
+			"patterns": [
+				{
+					"name": "keyword.control.ysscript",
+					"match": "playername"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ys"
+}
