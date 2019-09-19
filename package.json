@@ -3,7 +3,7 @@
     "displayName": "YS Script Language",
     "description": "",
     "publisher": "h34tn",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.35.0"
     },
@@ -55,7 +55,12 @@
                 "command": "jumpToNextSnippetPlaceholder",
                 "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
             }
-        ]
+        ],
+        "themes": [{
+            "label": "YSColor",
+            "uiTheme": "vs-dark",
+            "path": "./themes/YSColor.tmTheme"
+        }]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

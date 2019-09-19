@@ -1,48 +1,51 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "YSScript",
-	"patterns": [
+	"patterns": 
+	[
 		{
-			"include": "#keywords"
+			"include": "#keyword-scene"
 		},
 		{
-			"include": "#variable"
-		}
+			"include": "#keyword-narrator"
+		},
+		{
+			"include": "#keyword-dialog"
+		},
+		{
+			"include": "#keyword-choice"
+		},
+		{
+			"include": "#keyword-option"
+		}					
 	],
-	"repository": {
-		"keywords": {
-			"name": "keyword.square_brackets.ysscript",
-			"begin": "\\[",
-			"end": "\\]",
-			"patterns": [
-				{
-					"name": "keyword.control.ysscript",
-					"match": "\\b([Dd]ialog|[Cc]hoice|[Oo]ption|[Gg]ems|[Gg]oto|[Cc]omment|[Ll]abel)\\b"
-				},
-				{
-					"name": "keyword.parentheses.ysscript",
-					"begin": "\\(",
-					"end": "\\)",
-					"patterns": [
-						{
-							"name": "keyword.control.ysscript",
-							"match": "\\b([Tt]hink|[Ss]peak|[Nn]arrator)\\b"
-						}
-					]			
-				}
-			]
+	"repository": 
+	{
+		"keyword-scene": 
+		{
+			"name": "keyword.scene.ysscript",
+			"match": "^\\s*([Ss]cene|场景)\\s*"
 		},
-		"variable": {
-			"name": "keyword.variable.ysscript",
-			"begin": "\\{",
-			"end": "\\}",
-			"patterns": [
-				{
-					"name": "keyword.control.ysscript",
-					"match": "playername"
-				}
-			]
-		}
+		"keyword-narrator":
+		{
+			"name": "keyword.narrator.ysscript",
+			"match": "^\\s*[Nn][Aa][Rr][Rr][Aa][Tt][Oo][Rr]\\s*[:：]"
+		},
+		"keyword-dialog":
+		{
+			"name": "keyword.dialog.ysscript",
+			"match": "^\\s*(.+)\\s*[:：]"
+		},
+		"keyword-choice":
+		{
+			"name": "keyword.choice.ysscript",
+			"match": "^\\s*([Cc]hoice|选择)\\s*$"
+		},
+		"keyword-option":
+		{
+			"name": "keyword.option.ysscript",
+			"match": "^\\s*([Oo]ption|选项)\\s+"
+		}		
 	},
 	"scopeName": "source.ys"
 }
